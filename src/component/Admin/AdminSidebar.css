@@ -1,0 +1,75 @@
+/* Menu Icon (☰) */
+.menu-icon {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+  z-index: 1000; /* Ensures it's above other elements */
+  font-size: 24px; /* Makes the icon larger */
+  color: white;
+}
+
+/* Sidebar (Hidden by default) */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Initially hidden */
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  transition: left 0.3s ease-in-out; /* Smooth slide animation */
+  z-index: 9999; /* Ensures sidebar is on top */
+}
+
+/* When Sidebar is Open */
+.sidebar.open {
+  left: 0 !important; /* Forces sidebar to be visible */
+}
+
+/* Close Button (✖) */
+.sidebar .close-btn {
+  position: absolute;  /* Sidebar ke andar fix karega */
+  top: 10px;           /* Upar se halka space */
+  right: 10px;         /* Right side par le aayega */
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+
+/* Sidebar List */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  padding-top: 30px;
+}
+
+.sidebar ul li {
+  padding: 10px 0;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  display: block;
+  padding: 10px;
+  transition: background 0.3s ease-in-out;
+}
+
+/* Hover Effect on Sidebar Links */
+.sidebar ul li a:hover,.sidebar .close-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .sidebar {
+    width: 200px; /* Smaller width for small screens */
+  }
+}

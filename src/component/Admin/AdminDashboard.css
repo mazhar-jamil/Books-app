@@ -1,0 +1,81 @@
+.admin-Header {
+  display: flex;
+  justify-content: center;  /* Center horizontally */
+  align-items: center;       /* Center vertically */
+  background: linear-gradient(to right, #003366, #00509E); /* Dark Blue Gradient */
+  padding: 15px 20px;       /* More padding for better spacing */
+  margin: 0;
+  font-size: 26px;          
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase; /* Makes text more professional */
+  border-radius: 8px;       /* Smooth corners */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Light shadow for depth */
+}
+
+#bannerTable-AdminPage {
+  background-image: url(../../assets/Images/Banner-table.jpg);
+  background-size: cover;
+  background-position: center; 
+  color: white;
+  padding-bottom: 9%;
+  position: relative;
+}
+#testimonials h1{
+  margin: auto;
+}
+#testimonials {
+  background-image: url(../../assets/Images/testimonials.jpg);
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 20px 0;
+  position: relative;
+}
+#testimonials img{
+  width: 80px;
+  height: 76px;
+  border-radius: 50%;
+  /* padding-left: 5px; */
+  margin-left: 25px;
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 768px) {
+  #testimonials img{
+    margin: auto;
+    margin-top: 15px;
+  }
+  #testimonials p {
+    margin: auto;
+    text-align: center;
+  }
+}
+
+
+
+
+
+/* Table  */
+
+.TableAdmin-user {
+  background-color: black;
+}
+.admin-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: end;
+  min-height: 82vh;  /* ✅ Adjust hoga agar table bara ho */
+  margin: 50px 50px 0 0;
+  padding: 20px;
+}
+
+
+
+.admin-table {
+  width: 80%; /* Table ka width 80% */
+  /* padding: 20px; */
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
