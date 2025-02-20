@@ -22,7 +22,7 @@ function AdminSidebar() {
         <button className="close-btn" onClick={toggleSidebar}>✖</button>
         <ul>
           <li><Link to="/manage-users">Dashboard</Link></li>
-          <li><a href="#">Users</a></li>
+          <li><Link to="/uploadfile">Users</Link></li>
           <li><a href="#">Settings</a></li>
         </ul>
       </div>

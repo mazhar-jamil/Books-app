@@ -12,9 +12,10 @@ import img5 from '../assets/Images/Swiper-Natural-TreeWatreStone.jpg'
 import img6 from '../assets/Images/Swiper-natural-IceMountain.jpg'
 import img7 from '../assets/Images/Swiper-Book-light.jpg'
 
-const images = [img1, img2, img3, img4,img5, img6, img7];
 
-const ImageCarousel = ({ onSelect }) => {
+const ImageCarousel = ({ onSelect,images }) => {
+  const image = [img1, img2, img3, img4,img5, img6, img7, images];
+
   return (
     <div className="w-3/3 mx-auto pb-5 cursor-pointer">
       <Swiper
@@ -23,7 +24,7 @@ const ImageCarousel = ({ onSelect }) => {
         slidesPerView={3}
         navigation
       >
-        {images.map((img, index) => (
+        {image.map((img, index) => (
           <SwiperSlide key={index}>
             <img src={img} alt={`Slide ${index + 1}`} className="w-full h-90 mt-4 object-cover rounded-lg" onClick={() => onSelect(img)}/>
           </SwiperSlide>

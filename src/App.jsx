@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import {BrowserRouter, Route, Routes} from "react-router-dom"
 import Layout from './component/Layout'
 import Home from './component/Home'
@@ -9,11 +8,10 @@ import SignUp from './component/Login Page/SignUp'
 import AdminDashboard from './component/Admin/AdminDashboard'
 import ProtectedRoute from './component/Admin/ProtectedRoute'
 import AdminManageUsers from './component/Admin/AdminManageUsers'
+import UploadFile from './component/Admin/AdminControl/UploadFile'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
     <div>
@@ -35,10 +33,16 @@ function App() {
             </ProtectedRoute>
           } />
           <Route path='/manage-users' element={
-  <ProtectedRoute>
-    <AdminManageUsers />
-  </ProtectedRoute>
-} />
+            <ProtectedRoute>
+              <AdminManageUsers />
+            </ProtectedRoute>
+          } />
+
+          <Route path="/uploadfile" element={
+            <ProtectedRoute>
+              <UploadFile />
+            </ProtectedRoute>
+          }/>
 
       </Routes>
     </BrowserRouter>
