@@ -1,7 +1,12 @@
 @import "tailwindcss";
 
-.bg {
-  background-image: url(./assets/Images/Background.jpg);
+.bg-home {
+  background-image: url(./assets/Images/Banner-table.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.bg-home-swiper {
+  background-image: url(./assets/Images/testimonials.jpg);
   background-size: cover;
   background-position: center;
 }

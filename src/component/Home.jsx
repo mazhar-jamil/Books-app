@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import cardDefultImage from '../assets/Images/Book.JPG'
-import Books from '../assets/Images/Books Labrery.JPG'
-import showFront from '../assets/Images/showFront.PNG'
+import cardDefultImage from '../assets/Images/Book.WEBP'
+import MUTASHABIHAAT from '../assets/Images/MUTASHABIHAAT_UL_QURAN.webp'
+import TajQuran from '../assets/Images/TajQuran-Company.jpg'
+import showFront from '../assets/Images/images.Png'
 import ImageCarousel from './ImageCarousel'
 
 
 function Home() {
-  const [userImage, setUserImage] = useState(Books);
+  // const [userImage, setUserImage] = useState(Books);
 
-  const [cardImg,setCardImg] = useState(cardDefultImage)
 
   useEffect(() => {
     const getStoredFile = localStorage.getItem("adminFileAstore");
@@ -20,7 +20,7 @@ function Home() {
 
   return (
     <>
-    <div id="home-Card" className='bg'>
+    <div id="home-Card" className='bg-home'>
     <div className="container-fluid">
   <div className="row py-xl-4 py-lg-4 d-flex align-items-center justify-content-center" id="home-page-FirstRow">
     
@@ -30,9 +30,13 @@ function Home() {
         Islamic Books World
       </h1>
 
-      <p className="responsive-paragraph">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.
+            <p className="responsive-paragraph inline-flex">
+        Lorem ipsum dolor sit amet, consectetur adipisicing.
       </p>
+      <p className="responsive-paragraph hidden lg:inline-flex">
+        Lorem ipsum dolor sit amet, consectetur adipisicing. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga illo asperiores esse quam magnam obcaecati, odio officia in!
+      </p>
+
 
 
       <button className="btn my-xl-3 my-lg-3 my-md-3 px-4 py-2 my-0" id="Home-buy-btn">BUY NOW FOR $99.99</button>
@@ -47,54 +51,36 @@ function Home() {
   </div>
 </div>
 
+<ImageCarousel 
+  cardDefultImage={MUTASHABIHAAT} 
+  cardDefultHeader={"Mutashabihaat ul Quran"} 
+  cardDefultTitle={"متشابہات القرآن لتراویح رمضان"} 
+  cardDefultFooter={"Quran e Majeed || قرآن مجید"}
+  cardDefultFooterEnd={"منتخب موضوع"}
+  id={1} // ✅ ID pass karni zaroori hai
+/>
 
-    <div className="container pb-5">
-  <div className="row justify-content-center">
-    {/* First Card */}
-<div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 mt-5 pt-0 d-flex justify-content-center">
-  <div className="card responsive-Home-card">
-    <img
-      src={cardImg}
-      className="card-img-top home-Responsive-CardImg transition-all duration-500 transform hover:scale-105"
-      style={{ width: "100%", height: "400px", objectFit: "cover" }}
-      alt="Book"
-    />
-    <div className="card-body text-center">
-      <h5 className="card-title">Card title</h5>
-      <p className="card-text">
-        Some quick example text to build on the card title and make up the bulk of the card's content.
-      </p>
-      <label htmlFor="fileInput1" className="btn btn-primary">Upload File</label>
-      <input id="fileInput1" type="file" style={{ display: "none" }} />
-    </div>
-  </div>
+<ImageCarousel 
+  cardDefultImage={TajQuran} 
+  cardDefultHeader={"Al Quran 16 Lines"} 
+  cardDefultTitle={"القرآن الکریم 16 لائن والا سادہ – تاج کمپنی"} 
+  cardDefultFooter={"Quran e Majeed || قرآن مجید"}
+  cardDefultFooterEnd={"منتخب موضوع"}
+  id={2} // ✅ ID pass ki
+/>
+
 </div>
 
 
 
-    {/* Second Card */}
-    <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 mt-5 pt-0 d-flex justify-content-center gapx5">
-      <div className="card responsive-Home-card">
-        <img
-          src={userImage}
-          className="card-img-top home-Responsive-CardImg transition-all duration-500 transform hover:scale-105"
-          alt="Book"
-        />
-          <div className="card-body text-center">
-          <h5 className="card-title">Card title</h5>
-          <p className="card-text">
-            Some quick example text to build on the card title and make up the bulk of the card's content.
-          </p>
-          <label htmlFor="fileInput1" className="btn btn-primary">Upload File</label>
-          <input id="fileInput1" type="file" style={{ display: "none" }} />
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-    
-<ImageCarousel onSelect={(img) => setCardImg(img)}/>
-    </div>
+
+
+
+
+
+    {/* <div className='bg-home-swiper'>
+    <ImageCarousel onSelect={(img) => setCardImg(img)}/>
+    </div> */}
     </>
   )
 }

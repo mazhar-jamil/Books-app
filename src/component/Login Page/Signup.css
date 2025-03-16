@@ -1,3 +1,99 @@
+#signup-peg {
+  height: 100vh; /* Pura screen cover karega */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../src/assets/Images/Login-background.jPG);
+  background-position: center;
+  background-size: cover;
+}
+#signUp-row {
+  background: transparent;
+  border: 2px solid white;
+  backdrop-filter: blur(25px);
+  min-height: 70vh;
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ✅ Responsive for Tablets and Small Screens */
+@media (max-width: 768px) {
+  #signUp-row {
+    width: 80%;
+    padding: 15px;
+  }
+  #close-icon {
+    margin: 0;
+  }
+
+  .form-group input {
+    width: 100% !important;
+  }
+
+  .submit button {
+    width: 100%;
+  }
+}
+
+/* ✅ Fully Responsive for Mobile Screens */
+@media (max-width: 480px) {
+  #signUp-row {
+    width: 90%;
+    padding: 15px;
+    padding: 0;
+    margin: 0;
+  }
+
+  h1 {
+    font-size: 24px; /* ✅ Small heading for mobile */
+  }
+
+  .form-group label {
+    font-size: 14px;
+  }
+
+  .form-group input {
+    width: 100% !important;
+    font-size: 14px;
+    padding: 5px;
+    margin-inline: 0;
+  }
+  .form-group {
+    width: 100% !important;
+    margin-right: 40px;
+  }
+
+  .password-icon {
+    right: 60px;
+    top: 35px;
+    font-size: 18px;
+  }
+
+  .submit button {
+    width: 100%;
+    padding: 5px;
+    font-size: 16px;
+  }
+
+  .text-white {
+    font-size: 14px;
+  }
+}
+
+/* ✅ Logout Button Responsive */
+@media (max-width: 600px) {
+  #close-icon {
+    font-size: 20px;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+  }
+}
 
 /* #login-sm {
   background-color: #fff;

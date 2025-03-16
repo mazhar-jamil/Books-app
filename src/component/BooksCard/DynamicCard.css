@@ -1,0 +1,65 @@
+.DynamicCard-container {  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+}
+.DynamicCard-body {
+  display: flex;
+  flex-direction: column;  
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  margin-top: 5%;
+  background-color: rgb(78, 68, 68);  /* ✅ White background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.5); /* ✅ Shadow on all sides */
+  margin-bottom: 20px;
+  padding-bottom: 0;
+  padding-inline: 0;
+  color: white;
+}
+
+
+.DynamicCard-body h1 {
+  margin-bottom: 20px; 
+}
+
+.DynamicCard-image img {
+  margin-top: 90%; /* ✅ H1 se 30% neeche shift karega */
+  width: 200px;
+  height: 300px;
+}
+.DynamicCard-image button {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  margin-top: 50px;
+  background-color: cadetblue;
+}
+
+.DynamicCard-pera {
+  width: 100%;       /* ✅ Paragraph full width lega */
+  text-align: right; /* ✅ Text right side shift hoga */
+  margin-block: 70px;
+}
+.DynamicCard-Footer {
+  display: flex; /* ✅ Flexbox apply karega */
+  justify-content: space-between; /* ✅ Left & Right me gap dega */
+  width: 100%; /* ✅ Full width lega */
+  background-color: lightpink ;
+}
+.DynamicCard-Footer p {
+  margin: 0;
+  margin: 14px;
+}
+.DynamicCard-Footer p:first-of-type {
+  font-weight: bold;
+  background-color: rgb(88, 87, 87);
+  color: white;
+}
+.DynamicCard-Footer p:last-of-type {
+  font-weight: bold;
+}

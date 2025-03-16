@@ -1,0 +1,253 @@
+/* Navbar Container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 15px; /* ✅ Padding kam kar di */
+  /* background-color: burlywood; */
+  background-color: #6c4a28;
+  /* background-color: rgb(31, 31, 121); */
+  color: white;
+  position: relative;
+  height: 70px; /* ✅ Navbar ki height choti kar di */
+}
+.navbar .logo {
+  font-weight: bold;
+}
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.search-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.search-icon {
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+}
+
+/* Search Input (Hidden by Default) */
+.search-input {
+  width: 0;
+  opacity: 0;
+  padding: 5px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  transition: width 0.5s ease-in-out, opacity 0.3s ease-in-out, transform 0.5s ease-in-out;
+  transform: translateX(-20px); /* Start slightly hidden */
+}
+
+/* ✅ When Active, Smoothly Slide In */
+.search-container.active .search-input {
+  width: 200px;
+  opacity: 1;
+  transform: translateX(0);
+  background: white;
+  color: black;
+}
+
+
+/* Menu Icon (Hidden on Desktop) */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+}
+
+/* Navigation Links (Right Side) */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 0px;
+  background-color: #563a1e !important;
+  margin-top: 10px;
+  padding: 8px;
+  margin-inline: 0;
+  border-radius: 20px !important;
+}
+.nav-links li a:hover{
+  background-color: #6c4a28;
+}
+.nav-links li {
+  margin-inline: 5px;
+}
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+
+/* ✅ RESPONSIVE MENU (Mobile View) */
+@media (max-width: 776px) {
+  /* Show Menu Icon */
+  .menu-toggle {
+    display: block;
+  }
+  .nav-links li {
+    margin-block: 8px;
+  }
+  /* Hide Nav Links By Default */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: #444;
+    padding: 10px;
+    border-radius: 5px;
+    width: 200px;
+  }
+
+  /* Show Menu When Open */
+  .nav-links.open {
+    display: flex;
+  }
+}
+@media (max-width: 456px) {
+  /* Show Menu Icon */
+  .search-container.active .search-input {
+    width: 150px;
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+.navbar {
+  position: relative;
+}
+
+/* ✅ Dropdown Button */
+.dropdown-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%; /* ✅ Takes full width of parent */
+  text-align: left; /* ✅ Aligns text to left */
+}
+/* ✅ Dropdown Parent */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* ✅ Main Dropdown */
+.dropDown-Menu {
+  position: absolute;
+  top: 100%; /* ✅ Now properly below the parent */
+  left: 0;
+  width: 230px;
+  background-color: #6c4a28;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none; /* ✅ Prevents flickering */
+}
+
+/* ✅ Show Dropdown when Hovered */
+.dropdown:hover > .dropDown-Menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto; /* ✅ Ensures hover works smoothly */
+}
+
+/* ✅ Nested Dropdown (Moves Left) */
+.dropDown-Menu .dropdown {
+  position: relative;
+  width: 100%;
+}
+
+/* ✅ Submenu (Appears to the Left) */
+.dropDown-Menu .dropdown .dropDown-Menu {
+  top: 10px;
+  left: -100%; /* ✅ Moves the submenu to the left */
+  transform: translateX(-2%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* ✅ Show Nested Dropdown on Hover */
+.dropDown-Menu .dropdown:hover > .dropDown-Menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+
+.dropDown-Menu ul li {
+  list-style: none;
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.dropDown-Menu ul{
+  margin-inline: 0;
+  padding-inline: 0;
+}
+
+/* ✅ Hover Effect on Items */
+.dropDown-Menu ul li:hover {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+
+/* Dropdown Media Query */
+
+@media (max-width: 776px) {
+  /* Show Menu Icon */
+  .dropDown-Menu {
+    top: 0;
+    left: 0; /* ✅ Center from left */
+    transform: translateX(-107%); /* ✅ Adjust for perfect centering */
+    width: 180px;
+  }
+}
+@media (max-width: 576px) {
+  /* Show Menu Icon */
+  .dropDown-Menu {
+    width: 130px;
+    left: 0; /* ✅ Center from left */
+    transform: translateX(-109%); /* ✅ Adjust for perfect centering */
+  }
+  .nav-links {
+    width: 150px;
+  }
+}
+@media (max-width: 400px) {
+  /* Show Menu Icon */
+  .dropDown-Menu {
+    width: 100px;
+  }
+  .nav-links {
+    width: 150px;
+  }
+}
+@media (max-width: 325px) {
+  /* Show Menu Icon */
+  .dropDown-Menu {
+    width: 80px;
+  }
+}
+

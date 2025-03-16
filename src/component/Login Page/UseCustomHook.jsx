@@ -1,4 +1,3 @@
-import { faUserFriends } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -8,19 +7,32 @@ function useSignup() {
     return JSON.parse(localStorage.getItem("users")) || [];
   });
 
-  const signupUsers = (userPassword, userEmail) => {
+  const signupUsers = (userPassword,userEmail) => {  // ✅ Order fixed
+    const users = JSON.parse(localStorage.getItem("users")) || [];  // ✅ Latest users list
+
+
     const userFind = users.find(
-      (user) => user.password === userPassword && user.email === userEmail
+      (user) =>
+        user.email.toLowerCase().trim() === userEmail.toLowerCase().trim() &&
+        user.password.trim() === userPassword.trim()
     );
-        
+
+    console.log("User Found:", userFind);
+
     if (userFind) {
-      navigate("/");
-    }else{
-      alert("You are Rong password")
+      alert(`✅ Login Successful! You are a ${userFind.role}`);
+
+      if (userFind.role === "admin") {
+        navigate("/admindashboard");
+      } else {
+        navigate("/");
+      }
+    } else {
+      alert("You are not registered. Please register first.");
+      navigate("/register");  // ✅ Fix: "/Login" ki jagah "/register"
     }
   };
 
-  
   return { users, signupUsers };
 }
 

@@ -3,38 +3,13 @@ body html {
   margin: 0;
   padding: 0;
 }
-#menu {
-  background-color: rgb(171, 170, 170);
-  width: 200%;
-  display: flex;
-  justify-content: space-around;
-}
-#menu li{
-  margin-right: 50px;
-  padding: 5px;
-}
-#menu li a{
-  text-decoration: none;
-  color: inherit;
-  padding-block: 3px;
-  padding-inline: 20px;
-  border-radius: 6px;
-}
-#menu li a:hover {
-  background-color: rgb(152, 151, 151);
-}
-#login-btn {
-  margin-right: -80px;
-}
-#login {
-  background-color: #faa307;
-}
 
 /* Home Page started  */
 
 #home-page-FirstRow {
-  background: linear-gradient(to bottom, #e63946, #e85d04);
+  background: linear-gradient(to bottom, #8c6239, #7e5730);
   max-height: 330px;
+  margin-bottom: 4%;
 }
 #home-page-FirstRow p{
   margin-inline: 20%;
@@ -52,21 +27,33 @@ body html {
   background-color: transparent;
   border: solid 2px white;
 }
-.responsive-Home-card {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: 450px;
-  height: auto;
-  transition: height 0.3s ease-in-out;
-}
 
-.home-Responsive-CardImg {
-  width: 100%;
-  height: 400px; /* Fixed height taake naye images ka size same rahe */
-  object-fit: cover;
-  transition: height 0.3s ease-in-out;
+
+.parent-container {
+  margin-bottom: 1%;
 }
+.card {
+  background-color: #EAEAEA;
+}
+/* Media Quer Stated in Card  */
+@media (max-width: 776px) {  
+  .img-fluid {
+    height: 150px !important;
+  }
+}
+@media (max-width: 376px) {  
+  .img-fluid {
+    height: 100px !important;
+  }
+  .card-title {
+    font-size: 13px;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+  }
+} 
+
+
 
 /* Login-peg in page  */
 
@@ -95,19 +82,8 @@ body html {
   align-items: center;
   height: 100%; 
 }
-#login-sm {
-  background-color: black;
-  border-top-right-radius: 0 !important;
-  border-bottom-right-radius: 0 !important;
-}
 #Login-lg {
   background-color: black;
-}
-#signup-sm {
-  background-color: black;
-  border-color: black;
-  border-top-left-radius: 0 !important;
-  border-bottom-left-radius: 0 !important;
 }
 #login-sm:hover,#signup-sm:hover,#Login-lg:hover {
   color: white;
@@ -134,59 +110,6 @@ body html {
   color: white;
 }
 
-/* Header Media Querry Start. */
-
-@media (max-width: 576px) {
-  #loggo{
-    font-size: 40px;
-  }
-  #menu li{
-    margin-left: -20px;
-    padding-block: 8px;
-  }
-}
-@media (max-width: 540px) {
-  #loggo{
-    font-size: 40px;
-  }
-  #menu li{
-    margin-left: -50px;
-    padding-block: 8px;
-    padding-inline: 20px;
-  }
-  .content-Home-Link{
-    margin-right: 0px !important;
-  }
-}
-@media (max-width: 430px) {
-  #loggo {
-    font-size: 24px; /* Thoda chhota kar diya */
-  }
-
-  #menu {
-    display: flex;
-    flex-wrap: nowrap; /* Wrap hone se rok diya */
-    justify-content: center;
-    gap: 1px; /* Links ke darmiyan gap */
-    padding: 0;
-  }
-  #menu li {
-    padding: 5px 2px; /* Chhoti padding takay fit ho jaye */
-    font-size: 14px; /* Font size chhota takay ek line me aaye */
-    white-space: nowrap; /* Text ko break hone se roka */
-    
-    flex-shrink: 1; /* Thoda shrink hone diya */
-    min-width: 10px; /* Har link ka minimum size rakha */
-  }
-
-  /* Content link ki alignment */
-  .content-Home-Link {
-    margin-right: 0px !important;
-  }
-}
-
-
-
 /* Home page Card media querry started */
 
 @media (max-width: 726px) {
@@ -203,12 +126,16 @@ body html {
   #home-page-FirstRow h1{
     margin-top: 0 !important;
     padding-top: 0 !important;
-    font-size: 25px !important;
+    font-size: 18px !important;
   }
   #home-page-FirstRow p{
     margin-inline: 2%;
     font-size: 14px;
     text-align: center;
+  }
+  #Home-buy-btn {
+    padding: 3px;
+    font-size: 10px;
   }
 }
 
@@ -220,21 +147,51 @@ body html {
   .home-Responsive-CardImg {
     max-height: 250px; /* XS screens par height aur kam ho jayegi */
   }
+  .swiper-img {
+    height: 300px;
+  }
 }
 @media (max-width: 576px) {  
   .responsive-Home-card {
-    max-height: 380px;
+    max-height: 380px;  /* Fix card height */
     height: auto;
+    overflow: hidden;
   }
-  .responsive-Home-card p{
+
+  /* Text ko limit karne ka tarika */
+  .responsive-Home-card p {
     font-size: 14px;
     text-align: left;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
+
+  /* Image ki height set */
   .home-Responsive-CardImg {
-    max-height: 180px; /* XS screens par height aur kam ho jayegi */
+    max-height: 180px;
+  }
+
+  .swiper-img {
+    height: 200px;
+  }
+
+  /* Heading size chhoti ho jayegi */
+  #home-Card h1 {
+    font-size: 20px;
   }
 }
 
+@media (max-width: 376px) {  
+  .swiper-img {
+    height: 130px;
+  }
+  .logo {
+    font-size: 20px;
+  }
+}
 
 /* Footer Started */
 @media (max-width: 766px) {
@@ -246,3 +203,53 @@ body html {
     font-size: 30px;
   }
 }
+
+
+
+/* pag sinup */
+#Login-row {
+  background: transparent;
+  border: 2px solid white;
+  backdrop-filter: blur(25px);
+  min-height: 70vh;
+  width: 100%;
+  max-width: 500px; /* 👈 Start with max-width of 500px */
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: width 0.3s ease-in-out;
+  border-radius: 20px;
+}
+#Login-peg, .row-Login-Page {
+  width: 100% !important; /* 📌 Make sure the parent container is full width */
+  max-width: 100% !important; /* 📌 No restrictions */
+}
+
+
+/* ✅ Increase Width When Screen is Bigger Than 500px */
+@media (min-width: 500px) {
+  #Login-row {
+    width: 70%; /* 👈 Expand width */
+    max-width: 700px; /* 👈 Don't exceed this width */
+  }
+}
+
+/* ✅ Further Increase Width for Large Screens */
+@media (min-width: 900px) {
+  #Login-row {
+    width: 50%;
+    max-width: 900px;
+  }
+}
+
+#close-icon{
+  position: absolute;
+  top: 2px;
+  right: 5px;
+  background: transparent;
+  border: none;
+  color: black;
+}
+
